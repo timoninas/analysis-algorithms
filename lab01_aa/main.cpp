@@ -9,10 +9,10 @@ int main()
     string s1 = "sorskt";
     string s2 = "kosrt";
 
-    //cout << levenstein(s1, s2) << endl;
+    cout << levenstein(s1, s2) << endl;
     cout << levenstein_rec(s1, s2) << endl;
-    //cout << dameray_levenstein(s1, s2) << endl;
-    //cout << dameray_levenstein_rec(s1, s2) << endl;
+    cout << dameray_levenstein(s1, s2) << endl;
+    cout << dameray_levenstein_rec(s1, s2) << endl;
 
     cout <<"\nprogramm completed\n";
     return 0;
