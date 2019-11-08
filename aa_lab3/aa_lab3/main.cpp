@@ -9,17 +9,12 @@
 
 
 #include "sort.hpp"
+#include "test.hpp"
 #include "random.hpp"
 
 int main(int argc, const char * argv[]) {
     
-    int *a;
-    int n = 13;
-    
-    srand(time(nullptr));
-    
-    a = get_random_array(n, -5, 20);
-    array_print(a, n);
+    main_test();
     
     std::cout << "\nProgramm completed\n";
     return 0;

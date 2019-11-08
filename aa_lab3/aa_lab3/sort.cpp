@@ -50,6 +50,7 @@ void choices_sort(int *arr, unsigned n) {
     }
 }
 
+
 void array_print(int *arr, unsigned n) {
     
     std::cout << std::endl;
@@ -62,4 +63,34 @@ void array_print(int *arr, unsigned n) {
 
 void array_fill(int *arr, unsigned n) {
     
+}
+
+void array_sort_grow(int *arr, unsigned n) {
+    int temp, item;
+    for (int counter = 1; counter < n; counter++)
+    {
+        temp = arr[counter];
+        item = counter-1;
+        while(item >= 0 && arr[item] > temp)
+        {
+            arr[item + 1] = arr[item];
+            arr[item] = temp;
+            item--;
+        }
+    }
+}
+
+void array_sort_low(int *arr, unsigned n) {
+    int temp, item;
+    for (int counter = 1; counter < n; counter++)
+    {
+        temp = arr[counter];
+        item = counter-1;
+        while(item >= 0 && arr[item] < temp)
+        {
+            arr[item + 1] = arr[item];
+            arr[item] = temp;
+            item--;
+        }
+    }
 }
