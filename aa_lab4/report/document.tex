@@ -1,0 +1,192 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{url}
+\usepackage{flowchart}
+\usepackage{tikz}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.svg}
+\usetikzlibrary{shapes, arrows}
+
+\usepackage{pgfplotstable}
+
+\renewcommand\contentsname{Содержание}
+
+\usepackage{geometry}
+\geometry{left=3cm}
+\geometry{right=1cm}
+\geometry{top=2cm}
+\geometry{bottom=2cm}
+
+\lstset{ %
+language=C++,                 % выбор языка для подсветки (здесь это С)
+basicstyle=\small\sffamily, % размер и начертание шрифта для подсветки кода
+numbers=left,               % где поставить нумерацию строк (слева\справа)
+numberstyle=\tiny,           % размер шрифта для номеров строк
+stepnumber=1,                   % размер шага между двумя номерами строк
+numbersep=-5pt,                % как далеко отстоят номера строк от         подсвечиваемого кода
+backgroundcolor=\color{white}, % цвет фона подсветки - используем         \usepackage{color}
+showspaces=false,            % показывать или нет пробелы специальными     отступами
+showstringspaces=false,      % показывать или нет пробелы в строках
+showtabs=false,             % показывать или нет табуляцию в строках
+frame=single,              % рисовать рамку вокруг кода
+tabsize=2,                 % размер табуляции по умолчанию равен 2 пробелам
+captionpos=t,              % позиция заголовка вверху [t] или внизу [b] 
+breaklines=true,           % автоматически переносить строки (да\нет)
+breakatwhitespace=false, % переносить строки только если есть пробел
+escapeinside={\%*}{*)},   % если нужно добавить комментарии в коде
+keywordstyle=\color{blue}\ttfamily,
+stringstyle=\color{red}\ttfamily,
+commentstyle=\color{green}\ttfamily,
+morecomment=[l][\color{magenta}]{\#},
+columns=fullflexible }
+
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]{\LARGE\bfseries}{\thechapter{.} }{0pt}{\LARGE\bfseries}
+\titleformat*{\section}{\Large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+
+\begin{document}
+
+    \begin{titlepage}
+
+        \begin{center}
+            \Large
+            {\sl Государственное образовательное учреждение высшего профессионального образования\\
+            {\bf«Московский государственный технический университет имени Н.Э. Баумана»\\
+				(МГТУ им. Н.Э. Баумана)}}
+            \vspace{3cm}
+
+			{\scshape\LARGE Лабораторная работа №... \par}
+			\vspace{0.5cm}	
+			{\scshape\LARGE по курсу «Анализ алгоритмов» \par}
+			\vspace{1.5cm}
+			{\huge\bfseries Тема лабораторной работы \par}
+			\vspace{2cm}
+			\Large Выполнил: Тимонин А.С., гр. ИУ7-52Б\\
+			\vspace{0.5cm}
+			{\Large Преподаватели: Волкова Л.Л., Строганов Ю.В.}
+		
+			\vfill
+			\Large \textit {2019 г.}
+            
+        \end{center}
+
+    \end{titlepage}
+	
+	\tableofcontents
+
+	\chapter*{Введение}
+	\addcontentsline{toc}{chapter}{Введение}
+	
+
+    \chapter{Аналитический раздел}
+   	\vspace{-0.5cm}бла-бла-бла
+	\section{Описание алгоритмов}
+	бла-бла-бла
+
+	\section{Алгоритм1}
+	
+	\section{Алгоритм2}
+	бла-бла-бла
+	
+
+	\chapter{Конструкторский раздел}
+	
+	\vspace{-0.5cm} bla-bla-bla
+	
+	\section{Разработка алгоритмов}
+	тут схема алгоритмов
+
+	\newpage
+
+	\section{Расчет сложности}
+	бла-бла-бла
+	
+	\section{Вывод}
+	бла-бла-бла
+	
+	\begin{itemize}
+		\item бла-бла-бла
+		\item бла-бла-бла
+		\item бла-бла-бла
+	\end{itemize}
+	
+	\chapter{Технологический раздел}
+	\vspace{-0.5cm}бла-бла-бла
+	
+	\section{Требования к программному обеспечению}
+	бла-бла-бла
+	\section{Средства реализации}
+	Для выполнения поставленной задачи был использован язык программирования С++. Среда для разработки XCode. Для измерения процессорного времени была взята функция rdtsc из библиотеки ctime.
+	
+	\vspace{0.2cm}Данный язык обусловлен тем, что функции замеры времени могут считывать не только абсолютное время, но и процессорное.
+	
+	\vspace{0.2cm}Версия компилятора C++: GNU++14 [-std=gnu++14]
+	
+	
+	
+	\section{Листинг кода}
+	бла-бла-бла
+
+	\begin{lstlisting}[label=code-opt,caption=бла-бла-бла]
+	void name(int a)
+	{
+		return;
+	}
+	\end{lstlisting}
+
+	\newpage
+
+	\section{Вывод}
+	бла-бла-бла
+
+			
+	\chapter{Экспериментальный раздел}
+	
+	\vspace{-0.5cm}бла-бла-бла
+	
+	\section{Сравнительный анализ}
+	Замеры времени выполнялись на тестах...... Все замеры проводились на процессоре 1,4 GHz Intel Core i5 с памятью 8 ГБ 2133 MHz LPDDR3.
+	
+	\begin{table}[ht!]
+		\caption{бла-бла-бла}
+		\label{unit-tests}
+		\begin{center}
+			\begin{tabular}{|c|c|c|}
+				\hline
+				\bf{кек1} & \bf{кек2} & \bf{кек3}\\\hline
+				
+				$1$ & $2$ & $3$\\\hline
+				
+				$1$ & $2$ & $3$\\\hline
+			\end{tabular}
+		\end{center}
+	\end{table}
+	
+	
+	\section{Вывод}
+	бла-бла-бла
+
+	\newpage
+	
+ 	бла-бла-бла
+
+	\chapter*{Заключение}
+	\addcontentsline{toc}{chapter}{Заключение}
+	бла-бла-бла
+	
+	\newpage
+	
+	\begin{thebibliography}{}
+	\bibitem ...
+	\end{thebibliography}
+	\addcontentsline{toc}{chapter}{Литература}
+
+\end{document}
