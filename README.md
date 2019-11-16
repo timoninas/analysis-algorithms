@@ -108,11 +108,15 @@ void paintwidget::kov(QPainter &painter, double A, double B, double C, double D,
 
 Готовую, рабочую программу можно посмотреть [Ковер Серпинского](https://github.com/dotruger37/analysis_algorithms/tree/master/fractal_Sierpinski)
 
-### **Не в тему**
+Ковер Серпинского, Ковёр Серпинского, Квадрат Серпинского
+
+**Не в тему**
 
 Красивым фракталом можно назвать Множество Жюлиа.
 
 ![Множество жюлиа](fractal_Sierpinski/pictures/juie.jpg)
 
                                          Рис. 3 Множество Жюлиа
+                                         
+
 
