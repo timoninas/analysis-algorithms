@@ -98,7 +98,11 @@ void paintwidget::kov(QPainter &painter, double A, double B, double C, double D,
 
 ![Ковер Серпинского](fractal_Sierpinski/pictures/fractal_p4.jpg)
 
+                                         Рис. 2 Фрактал со степенью 4
+
 ![Ковер Серпинского](fractal_Sierpinski/pictures/fractal_p5.jpg)
+
+                                         Рис. 3 Фрактал со степенью 5
 
 **Программа**
 
@@ -109,4 +113,6 @@ void paintwidget::kov(QPainter &painter, double A, double B, double C, double D,
 Красивым фракталом можно назвать Множество Жюлиа.
 
 ![Множество жюлиа](https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Julia_set_%28highres_01%29.jpg/1280px-Julia_set_%28highres_01%29.jpg)
+
+                                         Рис. 3 Множество Жюлиа
 
