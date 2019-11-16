@@ -1,15 +1,16 @@
 #ifndef PAINTWIDGET_H
 #define PAINTWIDGET_H
 
+#include <QCoreApplication>
 #include <QWidget>
 #include <QColor>
 #include <QPainter>
 #include <QStack>
 #include <math.h>
 #include <QTime>
-#include <QCoreApplication>
 #include <stdio.h>
 #include <ctime>
+#include <stdio.h>
 
 #define SEP_X 320
 #define DELAY_TIME 50
@@ -21,7 +22,6 @@ struct fract_type {
     double D;
     int n;
 };
-
 
 class paintwidget : public QWidget
 {

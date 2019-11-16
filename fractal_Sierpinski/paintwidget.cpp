@@ -1,6 +1,4 @@
 #include "paintwidget.h"
-#include <stdio.h>
-#define EPS 1e-10
 
 unsigned long long tick(void)
 {
@@ -22,14 +20,8 @@ void draw_rect(QPainter &painter, double x1, double y1, double x2, double y2);
 
 void paintwidget::nkov(QPainter &painter, double A, double B, double C, double D, int n)
 {
-    /*QTime end = QTime::currentTime().addMSecs(3);
-    while(QTime::currentTime() < end)
-        QCoreApplication::processEvents(QEventLoop::AllEvents, 1000);
-    repaint();*/
     double A1, C1, B1, D1;
     QStack<fract_type> stck;
-
-    //printf("empty = %d\n", stck.isEmpty()); empty = 1
 
     stck.push({A, B, C, D, n});
 
@@ -68,8 +60,6 @@ void paintwidget::nkov(QPainter &painter, double A, double B, double C, double D
             stck.push({tmp.A, tmp.B, A1, B1, tmp.n - 1});
         }
     }
-
-    return;
 }
 
 void paintwidget::kov(QPainter &painter, double A, double B, double C, double D, int n)
@@ -110,8 +100,6 @@ void paintwidget::kov(QPainter &painter, double A, double B, double C, double D,
               kov(painter, A1, D1, C1, D, n-1);
               kov(painter, C1, D1, C, D, n-1);
            }
-
-    return;
 }
 
 void draw_rect(QPainter &painter, double x1, double y1, double x2, double y2)
@@ -151,7 +139,6 @@ void paintwidget::draw_fractal_rec()
 
     this->repaint();
     painter.end();
-
 }
 
 void paintwidget::clear()
@@ -165,7 +152,6 @@ void paintwidget::clear()
 
     this->repaint();
     painter.end();
-
 }
 
 void paintwidget::set_delay()
@@ -177,7 +163,7 @@ void paintwidget::reset_delay()
 {
     delay = 0;
 }
-#include <iostream>
+
 unsigned long long paintwidget::test()
 {
     reset_delay();
@@ -196,7 +182,6 @@ unsigned long long paintwidget::test()
         te = tick();
         answer += (te - tb)/10;
     }
-
 
     this->repaint();
     painter.end();

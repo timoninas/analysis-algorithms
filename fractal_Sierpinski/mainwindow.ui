@@ -27,7 +27,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="buttonFractalRec">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -40,7 +40,7 @@
      <string>фрактал рек.</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="buttonClear">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -53,7 +53,7 @@
      <string>очистить</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="buttonFractal">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -66,7 +66,7 @@
      <string>фрактал</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="buttonSetDelay">
     <property name="geometry">
      <rect>
       <x>780</x>
@@ -84,7 +84,7 @@
      <string>уст. задержку</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="buttonResetDelay">
     <property name="geometry">
      <rect>
       <x>780</x>
@@ -102,7 +102,7 @@
      <string>сбр. задержку</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="buttonTestFractal">
     <property name="geometry">
      <rect>
       <x>880</x>
@@ -120,7 +120,7 @@
      <string>тест</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="buttonTestFractalRec">
     <property name="geometry">
      <rect>
       <x>880</x>

@@ -19,19 +19,20 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
 
-    void on_pushButton_3_clicked();
+    void on_buttonFractal_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_buttonResetDelay_clicked();
 
-    void on_pushButton_4_clicked();
+    void on_buttonSetDelay_clicked();
 
-    void on_pushButton_5_clicked();
+    void on_buttonTestFractal_clicked();
 
-    void on_pushButton_6_clicked();
+    void on_buttonTestFractalRec_clicked();
 
-    void on_pushButton_7_clicked();
+    void on_buttonClear_clicked();
+
+    void on_buttonFractalRec_clicked();
 
 private:
     Ui::MainWindow *ui;

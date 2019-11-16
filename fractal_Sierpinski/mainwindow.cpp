@@ -13,7 +13,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     myscene = new paintwidget(ui->draw_widget);
     myscene->setMinimumSize(640, 600);
+
+    myscene->clear(); //without this string the window will be without background
     new_bound = true;
+
     shift_pressed = false;
 }
 
@@ -22,39 +25,39 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_clicked()
-{
-    myscene->draw_fractal_rec();
-}
-
-void MainWindow::on_pushButton_3_clicked()
-{
-    myscene->clear();
-}
-
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_buttonFractal_clicked()
 {
     myscene->draw_fractal();
 }
 
-void MainWindow::on_pushButton_4_clicked()
+void MainWindow::on_buttonSetDelay_clicked()
 {
     myscene->set_delay();
 }
 
-void MainWindow::on_pushButton_5_clicked()
+void MainWindow::on_buttonResetDelay_clicked()
 {
     myscene->reset_delay();
 }
 
-void MainWindow::on_pushButton_6_clicked()
+void MainWindow::on_buttonTestFractal_clicked()
 {
     auto answer = myscene->test();
     ui->test->setText(QString::number(answer));
 }
 
-void MainWindow::on_pushButton_7_clicked()
+void MainWindow::on_buttonTestFractalRec_clicked()
 {
     auto answer = myscene->test_rec();
     ui->testRec->setText(QString::number(answer));
+}
+
+void MainWindow::on_buttonClear_clicked()
+{
+    myscene->clear();
+}
+
+void MainWindow::on_buttonFractalRec_clicked()
+{
+    myscene->draw_fractal_rec();
 }
