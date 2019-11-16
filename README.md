@@ -112,7 +112,7 @@ void paintwidget::kov(QPainter &painter, double A, double B, double C, double D,
 
 Красивым фракталом можно назвать Множество Жюлиа.
 
-![Множество жюлиа](https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Julia_set_%28highres_01%29.jpg/1280px-Julia_set_%28highres_01%29.jpg)
+![Множество жюлиа](fractal_Sierpinski/pictures/juie.jpg)
 
                                          Рис. 3 Множество Жюлиа
 
