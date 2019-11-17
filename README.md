@@ -97,11 +97,11 @@ void paintwidget::kov(QPainter &painter, double A, double B, double C, double D,
 
 ![Ковер Серпинского](fractal_Sierpinski/pictures/fractal_p4.jpg)
 
-                                         Рис. 2 Фрактал со степенью 4
+                                         Рис. 2 Фрактал с степенью 4
 
 ![Ковер Серпинского](fractal_Sierpinski/pictures/fractal_p5.jpg)
 
-                                         Рис. 3 Фрактал со степенью 5
+                                         Рис. 3 Фрактал с степенью 5
 
 **Программа**
 
