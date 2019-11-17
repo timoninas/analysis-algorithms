@@ -105,7 +105,7 @@ void paintwidget::kov(QPainter &painter, double A, double B, double C, double D,
 
 **Программа**
 
-Готовую, рабочую программу можно посмотреть [Ковер Серпинского](https://github.com/dotruger37/analysis_algorithms/tree/master/fractal_Sierpinski)
+Готовую, рабочую программу можно посмотреть здесь →[Ковер Серпинского](https://github.com/dotruger37/analysis_algorithms/tree/master/fractal_Sierpinski)
 
 Ковер Серпинского, Ковёр Серпинского, Квадрат Серпинского
 
@@ -124,7 +124,7 @@ void paintwidget::kov(QPainter &painter, double A, double B, double C, double D,
 
 - 1-Расстояние Левенштейшна, Дамерау-Левенштейна
 - 2-Классический алгоритм перемножения матриц, алгоритм Винограда
-- 3-Сортировка пузырбком, вставками, выбором
+- 3-Сортировка пузырьком, вставками, выбором
 - 4-Многопоточная реализация алгоритма Винограда для п-я матриц
 - 5-Абстрактный конвейер 
 - 6-Обход по дереву брудфорсом и муравьиным алгоритмом
