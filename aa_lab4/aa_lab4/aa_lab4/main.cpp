@@ -38,12 +38,12 @@ void DoWork()
 int main(int argc, const char * argv[]) {
     
     matrix_type a, b, c;
-    a.n = 1; a.m = 2; a.matrix = get_matrix(a.n, a.m, -1, 7);
-    b.n = 2; b.m = 2; b.matrix = get_matrix(b.n, b.m, -1, 9);
-    c.n = 1; c.m = 2; c.matrix = get_matrix(c.n, b.m, 0, 0);
+    a.n = 10; a.m = 2000; a.matrix = get_matrix(a.n, a.m, -1, 7);
+    b.n = 2000; b.m = 10; b.matrix = get_matrix(b.n, b.m, -1, 9);
+    c.n = 10; c.m = 10; c.matrix = get_matrix(c.n, c.m, 0, 0);
     
-    print_matrix(a);
-    print_matrix(b);
+//    print_matrix(a);
+//    print_matrix(b);
 //    vingr_mult_matrix(a, b, c, 2, 5, 3);
 //    print_matrix(c, 2,  3);
 //    vingr_mult_mtr_opt(a, b, c, 2, 5, 3);
@@ -52,7 +52,7 @@ int main(int argc, const char * argv[]) {
     
     Vinograd_2_thread(a, b, c);
     
-    print_matrix(c);
+//    print_matrix(c);
 //    3 6 4 1 3
 //    7 5 7 7 0
 //

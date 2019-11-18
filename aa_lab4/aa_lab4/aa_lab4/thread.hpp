@@ -27,5 +27,6 @@ void calculate1(matrix_type &a, matrix_type &b, matrix_type &c, vector <int> &ro
 void Vinograd_1_thread(int **A, int **B, int **C,
                        unsigned M, unsigned N, unsigned Q);
 void Vinograd_2_thread(matrix_type &a, matrix_type &b, matrix_type &c);
+void Vinograd_4_thread(matrix_type &a, matrix_type &b, matrix_type &c);
 
 #endif /* thread_hpp */
