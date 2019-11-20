@@ -48,21 +48,25 @@ void calculate(int **&A, int **&B, int **&C, vector <int> &row, vector <int> &co
 
 }
 
-void calculate1(matrix_type &a, matrix_type &b, matrix_type &c, vector <int> &row, vector <int> &column, const unsigned int &n_start, unsigned int &n_end)
+void calculate1(matrix_type &a, matrix_type &b, matrix_type &c, vector <int> &row, vector <int> &column, const unsigned int n_start, unsigned int n_end)
 {
+    int sum = 0;
+    
     for (unsigned i = n_start; i < n_end; i++) {
         //cout << this_thread::get_id()<< endl;
         for (unsigned j = 0; j < b.m; j++) {
             
-            c.matrix[i][j] = -row[i] - column[j];
+            sum = -row[i] - column[j];
                 
             for (unsigned k = 0; k < a.m / 2; k++) {
-                c.matrix[i][j] = c.matrix[i][j] + (a.matrix[i][k << 1] + b.matrix[k << 1 | 1][j]) *
-                (a.matrix[i][k << 1 | 1] + b.matrix[k << 1][j]);
+                sum += (a.matrix[i][2*k] + b.matrix[2*k+1][j]) *
+                (a.matrix[i][2*k+1] + b.matrix[2*k][j]);
             }
             
             if (a.m % 2 == 1)
-                c.matrix[i][j] = c.matrix[i][j] + a.matrix[i][a.m - 1] * b.matrix[b.n - 1][j];
+                sum += a.matrix[i][a.m - 1] * b.matrix[b.n - 1][j];
+            
+            c.matrix[i][j] = sum;
         }
     }
 
@@ -86,14 +90,6 @@ void Vinograd_1_thread(int **A, int **B, int **C,
     thr_mulH.join();
     thread thr_mulV(create_mulV, ref(B), ref(column), 0, ref(Q), ref(N));
     thr_mulV.join();
-    
-//    for (int i = 0; i < M; i++) {
-//        cout << row[i] << " ";
-//    }; cout << endl;
-//
-//    for (int i = 0; i < Q; i++) {
-//        cout << column[i] << " ";
-//    }; cout << endl;
     
     thread thr_calculate(calculate, ref(A), ref(B), ref(C), ref(row), ref(column), ref(M), ref(N), ref(Q));
     thr_calculate.join();
@@ -119,8 +115,8 @@ void Vinograd_2_thread(matrix_type &a, matrix_type &b, matrix_type &c)
     thr_mulH.join();
     thr_mulV.join();
     
-    thread thr_calculate1(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), 0, ref(n1));
-    thread thr_calculate2(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), ref(n1), ref(a.n));
+    thread thr_calculate1(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), 0, n1);
+    thread thr_calculate2(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), n1, a.n);
     
     thr_calculate1.join();
     thr_calculate2.join();
@@ -133,8 +129,9 @@ void Vinograd_4_thread(matrix_type &a, matrix_type &b, matrix_type &c)
     
     unsigned int n14 = a.n / 4;
     unsigned int n12 = a.n / 2;
-    unsigned int n34 = a.n * 3 / 2;
+    unsigned int n34 = (a.n * 3) / 4;
     
+    zeroing(c.matrix, c.n, c.m);
     
     for (int i = 0; i < a.n; i++) {
         row.push_back(0);
@@ -143,23 +140,59 @@ void Vinograd_4_thread(matrix_type &a, matrix_type &b, matrix_type &c)
         column.push_back(0);
     }
     
-    thread thr_mulH(create_mulH, ref(a.matrix), ref(row), 0, ref(a.n), ref(a.m));
-    thr_mulH.join();
+    thread thr_mulH1(create_mulH, ref(a.matrix), ref(row), 0, (a.n)/2, ref(a.m));
+    thread thr_mulH2(create_mulH, ref(a.matrix), ref(row), (a.n)/2, ref(a.n), ref(a.m));
+    thread thr_mulV1(create_mulV, ref(b.matrix), ref(column), 0, (b.m)/2, ref(b.n));
+    thread thr_mulV2(create_mulV, ref(b.matrix), ref(column), (b.m)/2, b.m, ref(b.n));
     
-    thread thr_mulV(create_mulV, ref(b.matrix), ref(column), 0, ref(b.m), ref(b.n));
-    thr_mulV.join();
+    thr_mulH1.join(); thr_mulH2.join(); thr_mulV1.join(); thr_mulV2.join();
     
-    thread thr_calculate1(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), 0, ref(n14));
-    thr_calculate1.join();
+    thread thr_calculate1(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), 0, n14);
+    thread thr_calculate2(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), n14, n12);
+    thread thr_calculate3(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), n12, n34);
+    thread thr_calculate4(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), n34, a.n);
+
+    thr_calculate1.join(); thr_calculate2.join(); thr_calculate3.join(); thr_calculate4.join();
+}
+
+void Vinograd_8_thread(matrix_type &a, matrix_type &b, matrix_type &c)
+{
+    vector<int> row(a.n);
+    vector<int> column(b.m);
     
-    thread thr_calculate2(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), ref(n14), ref(n12));
-    thr_calculate2.join();
+    zeroing(c.matrix, c.n, c.m);
     
-    thread thr_calculate3(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), ref(n12), ref(n34));
-    thr_calculate3.join();
+    for (int i = 0; i < a.n; i++) {
+        row.push_back(0);
+    }
+    for (int i = 0; i < b.m; i++) {
+        column.push_back(0);
+    }
     
-    thread thr_calculate4(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), ref(n34), ref(a.n));
-    thr_calculate4.join();
+    thread thr_mulH1(create_mulH, ref(a.matrix), ref(row), 0, (a.n)/4, ref(a.m));
+    thread thr_mulH2(create_mulH, ref(a.matrix), ref(row), (a.n)/4, (a.n)/2, ref(a.m));
+    thread thr_mulH3(create_mulH, ref(a.matrix), ref(row), (a.n)/2, (a.n * 3)/4, ref(a.m));
+    thread thr_mulH4(create_mulH, ref(a.matrix), ref(row), (a.n * 3)/4, ref(a.n), ref(a.m));
+    
+    thread thr_mulV1(create_mulV, ref(b.matrix), ref(column), 0, (b.m)/4, ref(b.n));
+    thread thr_mulV2(create_mulV, ref(b.matrix), ref(column), (b.m)/4, (b.m)/2, ref(b.n));
+    thread thr_mulV3(create_mulV, ref(b.matrix), ref(column), (b.m)/2, (b.m * 3)/4, ref(b.n));
+    thread thr_mulV4(create_mulV, ref(b.matrix), ref(column), (b.m * 3)/4, ref(b.m), ref(b.n));
+    
+    thr_mulH1.join(); thr_mulH2.join(); thr_mulH3.join(); thr_mulH4.join();
+    thr_mulV1.join(); thr_mulV2.join(); thr_mulV3.join(); thr_mulV4.join();
+    
+    thread thr_calculate1(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), 0, (a.n)/8);
+    thread thr_calculate2(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), (a.n)/8, (a.n)/4);
+    thread thr_calculate3(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), (a.n)/4, (a.n * 3)/8);
+    thread thr_calculate4(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), (a.n * 3)/8, (a.n)/2);
+    thread thr_calculate5(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), (a.n)/2, (a.n * 5)/8);
+    thread thr_calculate6(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), (a.n * 5)/8, (a.n * 3)/4);
+    thread thr_calculate7(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), (a.n * 3)/4, (a.n * 7)/8);
+    thread thr_calculate8(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), (a.n * 7)/8, a.n);
+
+    thr_calculate1.join(); thr_calculate2.join(); thr_calculate3.join(); thr_calculate4.join();
+    thr_calculate5.join(); thr_calculate6.join(); thr_calculate7.join(); thr_calculate8.join();
 }
 
 

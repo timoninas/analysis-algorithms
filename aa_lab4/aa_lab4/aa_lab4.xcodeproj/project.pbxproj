@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7705B6042385905500A2931B /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7705B6022385905500A2931B /* test.cpp */; };
 		77949D7D2380496700621A2E /* thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77949D7B2380496700621A2E /* thread.cpp */; };
 		77D7649B23796EE60079F595 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77D7649A23796EE60079F595 /* main.cpp */; };
 		77D764A3237C3A790079F595 /* matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 77D764A1237C3A790079F595 /* matrix.cpp */; };
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7705B6022385905500A2931B /* test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
+		7705B6032385905500A2931B /* test.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = test.hpp; sourceTree = "<group>"; };
 		77949D7B2380496700621A2E /* thread.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = thread.cpp; sourceTree = "<group>"; };
 		77949D7C2380496700621A2E /* thread.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = thread.hpp; sourceTree = "<group>"; };
 		77D7649723796EE60079F595 /* aa_lab4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = aa_lab4; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7705B6012385904300A2931B /* test */ = {
+			isa = PBXGroup;
+			children = (
+				7705B6022385905500A2931B /* test.cpp */,
+				7705B6032385905500A2931B /* test.hpp */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
 		77D7648E23796EE60079F595 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +75,7 @@
 		77D7649923796EE60079F595 /* aa_lab4 */ = {
 			isa = PBXGroup;
 			children = (
+				7705B6012385904300A2931B /* test */,
 				77D7649A23796EE60079F595 /* main.cpp */,
 				77D764A1237C3A790079F595 /* matrix.cpp */,
 				77D764A2237C3A790079F595 /* matrix.hpp */,
@@ -130,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77D764A3237C3A790079F595 /* matrix.cpp in Sources */,
+				7705B6042385905500A2931B /* test.cpp in Sources */,
 				77949D7D2380496700621A2E /* thread.cpp in Sources */,
 				77D7649B23796EE60079F595 /* main.cpp in Sources */,
 			);
