@@ -38,9 +38,9 @@ void DoWork()
 int main(int argc, const char * argv[]) {
     
     matrix_type a, b, c;
-    a.n = 10; a.m = 2000; a.matrix = get_matrix(a.n, a.m, -1, 7);
-    b.n = 2000; b.m = 10; b.matrix = get_matrix(b.n, b.m, -1, 9);
-    c.n = 10; c.m = 10; c.matrix = get_matrix(c.n, c.m, 0, 0);
+    a.n = 3; a.m = 5; a.matrix = get_matrix(a.n, a.m, -1, 7);
+    b.n = 5; b.m = 3; b.matrix = get_matrix(b.n, b.m, -1, 9);
+    c.n = 3; c.m = 3; c.matrix = get_matrix(c.n, c.m, 0, 0);
     
 //    print_matrix(a);
 //    print_matrix(b);
@@ -50,20 +50,15 @@ int main(int argc, const char * argv[]) {
 //    print_matrix(c, 2, 3);
     
     
-    Vinograd_2_thread(a, b, c);
+    Vinograd_1_thread(a.matrix, b.matrix, c.matrix, a.n, a.m, b.m);
+    print_matrix(c);
     
-//    print_matrix(c);
-//    3 6 4 1 3
-//    7 5 7 7 0
-//
-//    5 5 9
-//    4 7 6
-//    0 4 8
-//    3 5 6
-//    0 0 3
-//
-//    42 78 110
-//    76 133 191
+    Vinograd_2_thread(a, b, c);
+    print_matrix(c);
+
+//    21    27    54
+//    7    1    37
+//    24    32    59
     
     delete [] a.matrix;
     delete [] b.matrix;
