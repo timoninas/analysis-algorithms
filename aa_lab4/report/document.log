@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.20)  8 NOV 2019 22:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.20)  21 NOV 2019 11:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -953,7 +953,11 @@ LaTeX Font Info:    Try loading font information for T2A+cmr on input line 3.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/cyrillic/t2acmr.fd
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-))
+)
+
+LaTeX Warning: Label `fig:image' multiply defined.
+
+)
 \openout1 = `document.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
@@ -970,8 +974,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
 LaTeX Font Info:    ... okay on input line 55.
 LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 55.
 LaTeX Font Info:    ... okay on input line 55.
-
-(/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count144
 \scratchdimen=\dimen196
@@ -1116,40 +1119,62 @@ File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 
 ] [7]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
+
+Overfull \hbox (10.27597pt too wide) in paragraph at lines 157--158
+ \T2A/cmr/m/n/12 За-ме-ры вре-ме-ни вы-пол-ня-лись на квад-рат-ных мат-ри-цах р
+аз-ме-ров от 100х100 до 1000х1000
+ []
+
 [8
 
-] [9] [10
+]
+<table2.png, id=48, 392.46625pt x 239.89626pt>
+File: table2.png Graphic file (type png)
+<use table2.png>
+Package pdftex.def Info: table2.png  used on input line 196.
+(pdftex.def)             Requested size: 470.95712pt x 287.87405pt.
+ [9 <./table2.png>]
+<table1.png, id=54, 394.47375pt x 234.8775pt>
+File: table1.png Graphic file (type png)
+<use table1.png>
+Package pdftex.def Info: table1.png  used on input line 238.
+(pdftex.def)             Requested size: 473.36612pt x 281.85158pt.
+ [10 <./table1.png>] [11] [12] [13
 
-] [11
+] [14
 
-] (./document.aux) ) 
+] (./document.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 29022 strings out of 492616
- 721519 string characters out of 6129480
+ 29037 strings out of 492616
+ 721688 string characters out of 6129480
  1086305 words of memory out of 5000000
- 32410 multiletter control sequences out of 15000+600000
+ 32422 multiletter control sequences out of 15000+600000
  19605 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,9n,96p,720b,1419s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-supe
-r/cm-super-t2a.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super
-/sfbx1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/s
-fbx1728.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfb
-x2074.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx2
-488.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfcc207
-4.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0600.
-pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pf
-b></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb>
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfsl1728.pfb></
-usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></us
-r/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti1728.pfb></usr/
-local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on document.pdf (12 pages, 204973 bytes).
+ 62i,9n,96p,1459b,1419s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc
+}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></us
+r/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/
+local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/lo
+cal/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/loca
+l/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/local/
+texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/te
+xlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texl
+ive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/cm-super/sfsl1728.pfb></usr/local/texlive/
+2019/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/20
+19/texmf-dist/fonts/type1/public/cm-super/sfti1728.pfb></usr/local/texlive/2019
+/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on document.pdf (15 pages, 291469 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
+ 118 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
