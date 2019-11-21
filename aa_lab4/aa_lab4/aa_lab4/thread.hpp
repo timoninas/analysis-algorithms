@@ -29,5 +29,6 @@ void Vinograd_1_thread(int **A, int **B, int **C,
 void Vinograd_2_thread(matrix_type &a, matrix_type &b, matrix_type &c);
 void Vinograd_4_thread(matrix_type &a, matrix_type &b, matrix_type &c);
 void Vinograd_8_thread(matrix_type &a, matrix_type &b, matrix_type &c);
+void Vinograd_n_thread(matrix_type &a, matrix_type &b, matrix_type &c, int n);
 
 #endif /* thread_hpp */

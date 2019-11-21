@@ -195,5 +195,42 @@ void Vinograd_8_thread(matrix_type &a, matrix_type &b, matrix_type &c)
     thr_calculate5.join(); thr_calculate6.join(); thr_calculate7.join(); thr_calculate8.join();
 }
 
-
+void Vinograd_n_thread(matrix_type &a, matrix_type &b, matrix_type &c, int n)
+{
+    vector<int> row(a.n);
+    vector<int> column(b.m);
+    
+    vector<thread> threads;
+    
+    unsigned int n1 = a.n / 2;
+    zeroing(c.matrix, c.n, c.m);
+    
+    double length_part = (double) a.n / n;
+    if (length_part < 1) {
+        length_part = 1;
+    }
+    
+    for (int i = 0; i < a.n; i++) {
+        row.push_back(0);
+    }
+    for (int i = 0; i < b.m; i++) {
+        column.push_back(0);
+    }
+    
+    thread thr_mulH(create_mulH, ref(a.matrix), ref(row), 0, ref(a.n), ref(a.m));
+    thread thr_mulV(create_mulV, ref(b.matrix), ref(column), 0, ref(b.m), ref(b.n));
+    
+    thr_mulH.join();
+    thr_mulV.join();
+    
+    for (int i = 1; i <= n; i++) {
+        threads.push_back(thread(calculate1, ref(a), ref(b), ref(c), ref(row), ref(column), (a.n * (i - 1)) / n, (a.n * i) / n));
+    }
+    
+    for (int i = 0; i < threads.size(); ++i) {
+        if (threads[i].joinable()) {
+            threads[i].join();
+        }
+    }
+}
 
