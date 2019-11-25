@@ -31,7 +31,7 @@ void test(int size, int value1, int value2)
         //te = tick();
         auto start = chrono::steady_clock::now();
         //Vinograd_1_thread(a.matrix, b.matrix, c.matrix, a.n, a.m, b.m);
-        Vinograd_n_thread(a, b, c, 1);
+        Vinograd_n_thread(a, b, c, 8);
         auto end = chrono::steady_clock::now();
         //tb = tick();
         
@@ -47,6 +47,6 @@ void test(int size, int value1, int value2)
 
 void test_main()
 {
-    for (int i = 100; i < 1000; i += 100)
+    for (int i = 100; i < 1005; i += 100)
         test(i, -15, 50);
 }
