@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.20)  25 NOV 2019 22:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.20)  25 NOV 2019 22:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1096,11 +1096,11 @@ your preamble.
 [5
 
 ]
-<scheme.png, id=39, 766.865pt x 1071.00125pt>
+<scheme.png, id=39, 524.96124pt x 975.645pt>
 File: scheme.png Graphic file (type png)
 <use scheme.png>
 Package pdftex.def Info: scheme.png  used on input line 160.
-(pdftex.def)             Requested size: 460.12256pt x 642.60571pt.
+(pdftex.def)             Requested size: 367.47037pt x 682.94685pt.
  [6 <./scheme.png>] [7]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
 LaTeX Font Info:    Try loading font information for T2A+cmss on input line 199
@@ -1215,7 +1215,7 @@ texmf-dist/fonts/type1/public/cm-super/sfsl1728.pfb></usr/local/texlive/2019/te
 xmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2019/texm
 f-dist/fonts/type1/public/cm-super/sfti1728.pfb></usr/local/texlive/2019/texmf-
 dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on document.pdf (19 pages, 559661 bytes).
+Output written on document.pdf (19 pages, 560210 bytes).
 PDF statistics:
  150 PDF objects out of 1000 (max. 8388607)
  103 compressed objects within 2 object streams
