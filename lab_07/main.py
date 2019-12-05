@@ -1,3 +1,5 @@
+
+
 def getFail(substring):
     fail = [0]*len(substring)
     for i in range(1,len(substring)):
@@ -22,6 +24,8 @@ def kmp(substring, text):
             index = i - len(substring) + 1
             break
 
+    # print("string    = '" + text + "'")
+    # print("substring = '" + substring + "'")
     return index
 
 def getSlide(pattern, m):
